@@ -1,4 +1,3 @@
-// frontend/src/RegistrationForm.js
 import React, { useState } from 'react';
 
 function RegistrationForm({ onRegistered }) {
@@ -31,31 +30,34 @@ function RegistrationForm({ onRegistered }) {
   };
 
   return (
-    <form onSubmit={handleRegister}>
-      <h2>Register</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+    <form onSubmit={handleRegister} className="p-4">
+      <h2 className="text-xl font-semibold mb-2">Register</h2>
+      {error && <p className="text-red-500">{error}</p>}
       <input 
         type="text" 
         placeholder="Username" 
         value={username} 
         onChange={(e) => setUsername(e.target.value)} 
         required 
-      /><br/>
+        className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
+      />
       <input 
         type="password" 
         placeholder="Password" 
         value={password} 
         onChange={(e) => setPassword(e.target.value)} 
         required 
-      /><br/>
+        className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
+      />
       <input 
         type="password" 
         placeholder="Confirm Password" 
         value={confirmPassword} 
         onChange={(e) => setConfirmPassword(e.target.value)} 
         required 
-      /><br/>
-      <button type="submit">Register</button>
+        className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
+      />
+      <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Register</button>
     </form>
   );
 }
